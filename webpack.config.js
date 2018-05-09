@@ -1,3 +1,5 @@
+//stage-2 翻译es7语法 .babelrc
+
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebPackPlugin = require("html-webpack-plugin");
@@ -12,7 +14,6 @@ api.map(item =>{
         secure: false
     };
 })
-console.log(process.env.NODE_ENV);
 module.exports = {
     entry:{
         index:'./src/index.js' //入口文件,
@@ -34,10 +35,10 @@ module.exports = {
                 test:/\.js$/,
                 exclude: /node_modules/,
                 use:{
-                    loader:'babel-loader'
-                    // options:{
-                    //     presets: [['es2015', {option: value}]]
-                    // }
+                    loader:'babel-loader',
+                    options:{
+                        presets: ['es2015', 'react']
+                    }
                 }
             },
             {
