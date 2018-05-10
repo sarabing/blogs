@@ -1,16 +1,19 @@
 import React from 'react';
-const Input = ({label,name,value,...props},{defaultTheme}) =>{
+import PropTypes from 'prop-types';
+
+const Input = ({label,name,value,children,...props},{defaultTheme}) =>{
+    
     const {theme,autoFocus,...rootProps} = props;
 
     return (
         <label
             htmlFor={name}
-            children={label || defaultLabel}
+            children={label || ''}
             {...rootProps}>
             <input 
                 name={name}
                 type="text"
-                value={value || ''}
+                defaultValue={value || ''}
                 theme={theme || defaultTheme}
                 {...props}
             />
@@ -18,4 +21,16 @@ const Input = ({label,name,value,...props},{defaultTheme}) =>{
     )
 }
 
-Input.contextType = {defaultTheme:React.PropTypes.object};
+Input.propTypes = {
+    name:PropTypes.string,
+    label:PropTypes.string,
+    value:PropTypes.string
+}
+
+Input.defaultProps = {
+    name:'Stranger'
+}
+
+Input.contextTypes={defaultTheme:(s) =>{console.log(s);}}
+
+export default Input;
