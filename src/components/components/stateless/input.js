@@ -6,7 +6,7 @@ const Input = ({label,name,value,children,...props},{defaultTheme}) =>{
     const {theme,autoFocus,...rootProps} = props;
 
     return (
-        <label
+        <div
             htmlFor={name}
             children={label || ''}
             {...rootProps}>
@@ -17,7 +17,7 @@ const Input = ({label,name,value,children,...props},{defaultTheme}) =>{
                 theme={theme || defaultTheme}
                 {...props}
             />
-        </label>
+        </div>
     )
 }
 

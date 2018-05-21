@@ -17,7 +17,7 @@ import thunk from 'redux-thunk';
 /**
  * react-router 4 中BrowserRouter调用H5 histroy.. 将路由也当做组件
  */
-import {BrowserRouter,Route }from 'react-router-dom'; 
+import {BrowserRouter,Route,HashRouter }from 'react-router-dom'; 
 /**
  * 将reducer整合成一个大的reducer 用combineReducers （redux）整合
  */
@@ -31,9 +31,9 @@ const store = createStore(rootReducer,applyMiddleware(thunk));
 ReactDOM.render(
     
         <Provider store={store}> 
-            <BrowserRouter>
+            <HashRouter>
                 <Nav/>
-            </BrowserRouter>
+            </HashRouter>
         </Provider>
     
          

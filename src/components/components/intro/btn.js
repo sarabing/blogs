@@ -8,7 +8,7 @@ export const Btn = (props) =>{
                 return (
                     <div>
                         {counte.counter}
-                        <button {...props} onClick={counte.toggleTheme}/>
+                        <button {...props} onClick={counte.toggleTheme} />
                     </div>
                 )
                 }
